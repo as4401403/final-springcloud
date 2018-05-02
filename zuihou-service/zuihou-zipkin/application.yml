@@ -1,5 +1,5 @@
 logging:
-  path: ./logs/zuihou-zipkin
+  path: ./logs/shop-cloud-zipkin
   file: ${logging.path}/root.log
   common-pattern: '%d{yyyy-MM-dd HH:mm:ss.SSS}:[%5p] [%t:%r] [%C{1}:%M:%L] --> %m%n'
   level:
@@ -9,20 +9,20 @@ spring:
   profiles:
     active: dev
   application:
-    name: zuihou-zipkin
+    name: shop-cloud-zipkin
   sleuth:
     enabled: false # 表示当前程序不使用sleuth
   rabbitmq:
-    host: zuihou.rabbitmq.host # 在hosts文件中配置地址
+    host: shop.cloud.rabbitmq.host # 在hosts文件中配置地址
     port: 5672
     username: guest
     password: guest
   datasource:
     schema[0]: classpath:/zipkin.sql #数据库脚本创建地址，当有多个是可使用[x]表示集合第几个元素
     #spring boot数据源配置
-    url: jdbc:mysql://zuihou.mysql.host:3306/zuihou_zipkin_dev?serverTimezone=CTT&characterEncoding=utf8&useUnicode=true&useSSL=false
+    url: jdbc:mysql://shop.cloud.mysql.host:3306/shop_cloud_zipkin_dev?serverTimezone=CTT&characterEncoding=utf8&useUnicode=true&useSSL=false
     username: root
-    password: root     # 这里不需要加密
+    password: root123     # 这里不需要加密
     driver-class-name: com.mysql.cj.jdbc.Driver
     initialize: true
     continue-on-error: true
