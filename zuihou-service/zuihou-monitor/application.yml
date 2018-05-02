@@ -16,7 +16,7 @@ endpoints:
     sensitive: true  # actuator的health接口是否需要安全保证
 
 logging:
-  path: ./logs/zuihou-monitor
+  path: ./logs/shop-cloud-monitor
   file: ${logging.path}/root.log
   common-pattern: '%d{yyyy-MM-dd HH:mm:ss.SSS}:[%5p] [%t:%r] [%C{1}:%M:%L] --> %m%n'
   level:
@@ -52,7 +52,7 @@ spring:
 #          enable: true
 #          required: true
   rabbitmq:
-    host: zuihou.rabbitmq.host # 在hosts文件中配置地址
+    host: shop.cloud.rabbitmq.host # 在hosts文件中配置地址
     port: 5672
     username: guest
     password: guest
